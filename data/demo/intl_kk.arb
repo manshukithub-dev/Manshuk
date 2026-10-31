@@ -1,0 +1,86 @@
+{
+  "@@locale": "kk",
+  "@@context": "DEMO: Qazaq Loc QA Mobile RP Sample (Kazakh)",
+  "app_title": "Grand RP Mobile",
+  "@app_title": {
+    "description": "Official game title"
+  },
+  "garage_rent_button": "Жалға алу үшін басыңыз",
+  "@garage_rent_button": {
+    "description": "Primary CTA button inside garage screen"
+  },
+  "gift_sent_notification": "{name}-ға сыйлық жіберілді",
+  "@gift_sent_notification": {
+    "description": "Toast shown after sending a gift to another player",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Arman_KZ"
+      }
+    }
+  },
+  "donate_balance_label": "Шотыңызда {amount} Үлкен монеталар бар",
+  "@donate_balance_label": {
+    "description": "Player donate currency balance",
+    "placeholders": {
+      "amount": {
+        "type": "int",
+        "example": "250"
+      }
+    }
+  },
+  "family_vault_deposit": "Жанұя қоймасына {sum} ₸ салынды",
+  "@family_vault_deposit": {
+    "placeholders": {
+      "sum": {
+        "type": "String"
+      }
+    }
+  },
+  "fraction_invite_msg": "Сіз {fraction_title} фракциясына қабылдандыңыз",
+  "@fraction_invite_msg": {
+    "placeholders": {
+      "fractionName": {
+        "type": "String"
+      }
+    }
+  },
+  "admin_warn_received": "Ережені бұзғаныңыз үшін әкімші сізге 1 варн берді",
+  "chat_mute_notice": "Чатта сізге {minutes} мин. мут берілді.",
+  "@chat_mute_notice": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "trucker_job_fura": "Фураны жалға алып, жүкті портқа жеткізіңіз.",
+  "vip_price_short": "VIP бағасы: 500 ГК",
+  "online_players_count": "{count, plural, one{{count} ойыншы желіде}}",
+  "@online_players_count": {
+    "description": "ICU plural online counter",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "business_tax_warning": "Назар аударыңыз! Бизнес салығын төлеңіз.",
+  "player_list_header": "Ойыншылар тизими жане купия сөз",
+  "quest_reward_level": "Сыйлық 5-ға деңгейден бастап қолжетімді",
+  "dialog_cancel_primary": "Бас тарту",
+  "dialog_cancel_secondary": "Болдырмау",
+  "confirm_action_prompt": "Сіз сенімдісіз бе не көлікті сатқыңыз келеді?",
+  "server_connection_lost": "",
+  "bank_insufficient_funds": "Insufficient funds on your bank account",
+  "trade_offer_from": "Предложение обмена от {player}",
+  "@trade_offer_from": {
+    "placeholders": {
+      "player": {
+        "type": "String"
+      }
+    }
+  },
+  "garage_park_success": "Көлігіңіз гаражға сәтті қойылды",
+  "hud_currency_brand": "Grand Coins"
+}

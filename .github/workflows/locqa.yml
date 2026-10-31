@@ -1,0 +1,90 @@
+name: Qazaq Loc QA — CI & Localization Check
+
+on:
+  push:
+    branches: ["main", "master"]
+    paths:
+      - "backend/**"
+      - "frontend/**"
+      - "cli/**"
+      - "glossary/**"
+      - "**/*.arb"
+      - "requirements.txt"
+      - ".github/workflows/**"
+  pull_request:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+jobs:
+  backend-and-locqa:
+    name: Backend Pytest & ARB QA CLI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Automated Pytest Suite
+        run: pytest backend/tests -v
+
+      - name: Run CLI QA Check (Kazakh)
+        run: |
+          python -m cli.locqa check \
+            --source data/demo/intl_ru.arb \
+            --target data/demo/intl_kk.arb \
+            --glossary glossary/glossary.csv \
+            --out reports/ci_kk_report.json \
+            --html reports/ci_kk_report.html
+
+      - name: Run CLI QA Check (Uzbek)
+        run: |
+          python -m cli.locqa check \
+            --source data/demo/intl_ru.arb \
+            --target data/demo/intl_uz.arb \
+            --lang uz \
+            --glossary glossary/glossary.csv \
+            --out reports/ci_uz_report.json \
+            --html reports/ci_uz_report.html
+
+      - name: Upload QA Reports Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qazaq-locqa-reports
+          path: reports/
+
+  frontend-build:
+    name: Frontend Production Build (Vercel Check)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install Frontend dependencies
+        run: npm ci
+
+      - name: Build Production Bundle
+        env:
+          VITE_API_BASE_URL: https://qazaq-locqa-api.onrender.com
+        run: npm run build

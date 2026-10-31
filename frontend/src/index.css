@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #050811;
+    color: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #070b16;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #38bdf8;
+  }
+}
+
+@layer components {
+  .saas-card {
+    @apply rounded-2xl bg-[#0A0F1E]/85 backdrop-blur-xl border border-white/[0.07] shadow-glass transition-all duration-200;
+  }
+
+  .saas-card-hover {
+    @apply saas-card hover:border-cyan-400/30 hover:-translate-y-0.5 hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12),0_18px_40px_-12px_rgba(56,189,248,0.16)];
+  }
+
+  .saas-input {
+    @apply rounded-xl bg-[#060A15]/90 border border-white/[0.09] text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400/70 focus:ring-2 focus:ring-cyan-500/15 transition-all duration-150;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 hover:from-cyan-400 hover:via-blue-500 hover:to-violet-500 text-white font-semibold shadow-[0_0_24px_-4px_rgba(59,130,246,0.45),inset_0_1px_0_0_rgba(255,255,255,0.28)] active:scale-[0.99] transition-all duration-150 disabled:opacity-45 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.09] hover:border-white/[0.16] text-slate-200 font-semibold active:scale-[0.99] transition-all duration-150 disabled:opacity-45;
+  }
+}
+
+.ambient-canvas {
+  background-color: #050811;
+  background-image:
+    radial-gradient(ellipse 75% 42% at 50% -12%, rgba(56, 189, 248, 0.13), transparent 70%),
+    radial-gradient(ellipse 55% 38% at 88% 8%, rgba(139, 92, 246, 0.11), transparent 65%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page {
+  animation: fadeInSlide 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "qazaq-loc-qa-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Qazaq Loc QA — Full-Stack Kazakh & Uzbek Mobile Game Localization QA Platform",
+  "scripts": {
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "start:backend": ".venv\\Scripts\\python.exe -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000",
+    "dev:backend": ".venv\\Scripts\\python.exe -m uvicorn backend.app.main:app --reload --reload-dir backend --reload-dir cli --host 127.0.0.1 --port 8000",
+    "test:backend": ".venv\\Scripts\\python.exe -m pytest backend/tests -v",
+    "cli": ".venv\\Scripts\\python.exe -m cli.locqa"
+  }
+}

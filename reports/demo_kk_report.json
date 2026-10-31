@@ -1,0 +1,178 @@
+[
+  {
+    "key": "garage_rent_button",
+    "issue_type": "length_overflow",
+    "severity": "high",
+    "source": "Арендовать",
+    "target": "Жалға алу үшін басыңыз",
+    "evidence": "Түпнұсқамен салыстырғанда интерфейс мәтіні тым ұзын (10 → 22 таңба, 2.2x).",
+    "suggestion": "Жалға алу",
+    "confidence": 0.95,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "gift_sent_notification",
+    "issue_type": "suffix_harmony",
+    "severity": "high",
+    "source": "Подарок отправлен игроку {name}",
+    "target": "{name}-ға сыйлық жіберілді",
+    "evidence": "«{name}-ға» тіркесіндегі {name} мәні тек ойын жұмыс істеп тұрғанда (runtime) белгілі болады. Тұрақты «-ға» жалғауы ойыншы атының соңғы дыбысы мен жуан-жіңішкелігіне сәйкес келмей қалады (мысалы: «Әлішер-ға» немесе «Серік-ға» — қате). Шешім: (1) сөйлемді жалғаусыз/көмекші сөз арқылы қайта құрастырыңыз немесе (2) қосымшаны код деңгейінде (KazakhSuffixHelper) динамикалық түрде жалғаңыз. Қауіпті автоматты түзету қолданылмайды — маманның тексеруі қажет.",
+    "suggestion": "Сыйлық {name} атты ойыншыға жіберілді",
+    "confidence": 0.97,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "donate_balance_label",
+    "issue_type": "glossary_violation",
+    "severity": "high",
+    "source": "На вашем счету {amount} Grand Coins",
+    "target": "Шотыңызда {amount} Үлкен монеталар бар",
+    "evidence": "Глоссарий талабы бұзылған: «Grand Coins» термині «Grand Coins» ретінде қолданылуы тиіс.",
+    "suggestion": "Шотыңызда {amount} Grand Coins бар",
+    "confidence": 0.94,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "donate_balance_label",
+    "issue_type": "length_overflow",
+    "severity": "high",
+    "source": "На вашем счету {amount} Grand Coins",
+    "target": "Шотыңызда {amount} Үлкен монеталар бар",
+    "evidence": "Түпнұсқамен салыстырғанда интерфейс мәтіні тым ұзын (28 → 31 таңба, 1.1x).",
+    "suggestion": "",
+    "confidence": 0.95,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "donate_balance_label",
+    "issue_type": "machine_translation_suspect",
+    "severity": "medium",
+    "source": "На вашем счету {amount} Grand Coins",
+    "target": "Шотыңызда {amount} Үлкен монеталар бар",
+    "evidence": "«Grand Coins» бренд атауы сөзбе-сөз машиналық түрде «Үлкен монеталар» деп аударылған.",
+    "suggestion": "Шотыңызда {amount} Grand Coins бар",
+    "confidence": 0.89,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "family_vault_deposit",
+    "issue_type": "glossary_violation",
+    "severity": "medium",
+    "source": "В склад семьи внесено {sum} ₸",
+    "target": "Жанұя қоймасына {sum} ₸ салынды",
+    "evidence": "Глоссарий талабы бұзылған: «семья» термині «отбасы» ретінде қолданылуы тиіс.",
+    "suggestion": "отбасы қоймасына {sum} ₸ салынды",
+    "confidence": 0.94,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "fraction_invite_msg",
+    "issue_type": "placeholder_mismatch",
+    "severity": "high",
+    "source": "Вы приняты во фракцию {fractionName}",
+    "target": "Сіз {fraction_title} фракциясына қабылдандыңыз",
+    "evidence": "Плейсхолдерлер түпнұсқамен сәйкес келмейді (жетіспейді: {fractionName}; артық/өзгертілген: {fraction_title}).",
+    "suggestion": "Сіз {fractionName} фракциясына қабылдандыңыз",
+    "confidence": 0.99,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "online_players_count",
+    "issue_type": "plural_mismatch",
+    "severity": "high",
+    "source": "{count, plural, =0{Нет игроков в сети} one{{count} игрок в сети} few{{count} игрока в сети} many{{count} игроков в сети} other{{count} игроков в сети}}",
+    "target": "{count, plural, one{{count} ойыншы желіде}}",
+    "evidence": "ICU көпше/таңдау құрылымы бұзылған: ICU plural құрылымында міндетті 'other{...}' тармағы жоқ (count).",
+    "suggestion": "{count, plural, one{{count, plural, one{{count} ойыншы желіде}}} other{{count, plural, one{{count} ойыншы желіде}}}}",
+    "confidence": 0.97,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "business_tax_warning",
+    "issue_type": "other_localization_issue",
+    "severity": "high",
+    "source": "<color=#FF4D4F>Внимание!</color> Оплатите налог на бизнес.",
+    "target": "Назар аударыңыз! Бизнес салығын төлеңіз.",
+    "evidence": "Пішімдеу/HTML тегтері сәйкес келмейді: түпнұсқада ['<color=#FF4D4F>', '</color>'], аудармада жоқ.",
+    "suggestion": "",
+    "confidence": 0.96,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "player_list_header",
+    "issue_type": "orthography",
+    "severity": "high",
+    "source": "Список игроков и пароль",
+    "target": "Ойыншылар тизими жане купия сөз",
+    "evidence": "Қазақтың төл әріптерінің (ә, ғ, қ, ң, ө, ұ, ү, һ, і) орнына орыс әріптері қолданылған: «жане» → «және», «тизими» → «тізімі», «купия» → «құпия».",
+    "suggestion": "Ойыншылар тізімі және құпия сөз",
+    "confidence": 0.95,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "quest_reward_level",
+    "issue_type": "suffix_harmony",
+    "severity": "medium",
+    "source": "Награда доступна с 5 уровня",
+    "target": "Сыйлық 5-ға деңгейден бастап қолжетімді",
+    "evidence": "Сандық жалғау үндестік заңына сәйкес келмейді: «5-ға» емес, қазақ тілінің дыбыс үндестігі бойынша «5-ке» болуы тиіс.",
+    "suggestion": "Сыйлық 5-ке деңгейден бастап қолжетімді",
+    "confidence": 0.95,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "dialog_cancel_secondary",
+    "issue_type": "inconsistent_term",
+    "severity": "medium",
+    "source": "Отмена",
+    "target": "Болдырмау",
+    "evidence": "Бірдей түпнұсқа мәтін («Отмена») файл ішінде әртүрлі аударылған: «Бас тарту» / «Болдырмау».",
+    "suggestion": "Бас тарту",
+    "confidence": 0.91,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "confirm_action_prompt",
+    "issue_type": "machine_translation_suspect",
+    "severity": "medium",
+    "source": "Вы уверены, что хотите продать транспорт?",
+    "target": "Сіз сенімдісіз бе не көлікті сатқыңыз келеді?",
+    "evidence": "«Вы уверены что...» құрылымының сапасыз машиналық калькасы.",
+    "suggestion": "Сіз шынымен растайсыз ба? көлікті сатқыңыз келеді?",
+    "confidence": 0.89,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "server_connection_lost",
+    "issue_type": "untranslated",
+    "severity": "high",
+    "source": "Соединение с сервером потеряно. Попробуйте снова.",
+    "target": "",
+    "evidence": "Аударма жолы бос немесе мақсатты ARB файлында бұл кілт мүлде жоқ.",
+    "suggestion": "",
+    "confidence": 0.99,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "bank_insufficient_funds",
+    "issue_type": "wrong_language",
+    "severity": "high",
+    "source": "Недостаточно средств на банковском счёте",
+    "target": "Insufficient funds on your bank account",
+    "evidence": "Қазақша аударма орнына ағылшынша мәтін жазылған (Insufficient, funds).",
+    "suggestion": "",
+    "confidence": 0.96,
+    "reviewed_by_human": false
+  },
+  {
+    "key": "trade_offer_from",
+    "issue_type": "same_as_source",
+    "severity": "high",
+    "source": "Предложение обмена от {player}",
+    "target": "Предложение обмена от {player}",
+    "evidence": "Аударма мәтіні орысша түпнұсқамен бірдей күйінде қалған.",
+    "suggestion": "",
+    "confidence": 0.98,
+    "reviewed_by_human": false
+  }
+]

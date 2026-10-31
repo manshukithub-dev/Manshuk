@@ -1,0 +1,56 @@
+# ============================================================
+# Qazaq Loc QA — Git Ignore Rules (Security & Clean Repo)
+# ============================================================
+
+# 1. Secrets & Environment Variables (NEVER COMMIT SECRETS)
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+*.pem
+*.key
+secrets.*
+
+# 2. Local SQLite Databases & Ephemeral Uploads
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+data/uploads/*
+!data/uploads/.gitkeep
+
+# 3. Python Virtual Environments & Caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+# 4. Node.js / Vite Frontend Build Artifacts
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.tsbuildinfo
+*.local
+
+# 5. Generated CI / Local Scratch Reports & Runtime Server Logs
+reports/ci_*
+logs/
+.pids/
+
+# 6. OS & Editor Metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qazaq Loc QA — Локализация сапасы есебі</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #070b14;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+    .container { max-width: 1280px; margin: 0 auto; }
+    .header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    h1 { margin: 0; font-size: 24px; color: #f8fafc; }
+    .subtitle { color: #94a3b8; font-size: 13px; margin-top: 4px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+    .card-label { font-size: 12px; color: #94a3b8; }
+    .card-value { font-size: 26px; font-weight: 800; margin-top: 6px; color: #f8fafc; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #1e293b;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #111827; color: #94a3b8; font-weight: 600; }
+    .section-title { font-size: 16px; font-weight: 700; margin: 0 0 12px 0; color: #38bdf8; }
+    ul.recs { margin: 0; padding-left: 20px; color: #cbd5e1; }
+    ul.recs li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>QAZAQ LOC QA — Сапа есебі </h1>
+        <div class="subtitle">Жоба: intl_ru.arb → intl_kk.arb • Қалыптастырылған уақыты: 2026-10-30 10:49 UTC</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:12px;color:#94a3b8;">Сапа көрсеткіші (KK / UZ)</div>
+        <div style="font-size:22px;font-weight:800;color:#34d399;">45.7% / —</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card"><div class="card-label">Жалпы жол саны</div><div class="card-value">22</div></div>
+      <div class="card"><div class="card-label">Табылған қателер</div><div class="card-value" style="color:#f43f5e;">16</div></div>
+      <div class="card"><div class="card-label">High / Medium / Low</div><div class="card-value" style="font-size:20px;"><span style="color:#f43f5e;">11</span> / <span style="color:#f59e0b;">5</span> / <span style="color:#38bdf8;">0</span></div></div>
+      <div class="card"><div class="card-label">Түзетілген жолдар</div><div class="card-value" style="color:#a78bfa;">7</div></div>
+      <div class="card"><div class="card-label">Адам тексерген жолдар</div><div class="card-value" style="color:#34d399;">0</div></div>
+      <div class="card"><div class="card-label">Тексерілмеген жолдар</div><div class="card-value" style="color:#fbbf24;">22</div></div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="section-title">Қате түрлері бойынша статистика</div>
+        <table>
+          <thead><tr><th>Қате түрі</th><th style="text-align:right;">Саны</th></tr></thead>
+          <tbody>
+        <tr>
+          <td>Мәтін тым ұзын (length_overflow)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">2</td>
+        </tr>
+        
+        <tr>
+          <td>Қосымша үндестігі (suffix_harmony)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">2</td>
+        </tr>
+        
+        <tr>
+          <td>Глоссарий бұзушылығы (glossary_violation)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">2</td>
+        </tr>
+        
+        <tr>
+          <td>Машиналық аударма күдігі (machine_translation_suspect)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">2</td>
+        </tr>
+        
+        <tr>
+          <td>Плейсхолдер сәйкессіздігі (placeholder_mismatch)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">1</td>
+        </tr>
+        
+        <tr>
+          <td>ICU көпше түр қатесі (plural_mismatch)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">1</td>
+        </tr>
+        
+        <tr>
+          <td>Басқа локализация қатесі (other)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">1</td>
+        </tr>
+        
+        <tr>
+          <td>Емле қатесі (orthography)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">1</td>
+        </tr>
+        
+        <tr>
+          <td>Біркелкі емес термин (inconsistent_term)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">1</td>
+        </tr>
+        
+        <tr>
+          <td>Аударылмаған жол (untranslated)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">1</td>
+        </tr>
+        
+        <tr>
+          <td>Қате тіл (wrong_language)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">1</td>
+        </tr>
+        
+        <tr>
+          <td>Түпнұсқамен бірдей (same_as_source)</td>
+          <td style="text-align:right;font-weight:700;color:#38bdf8;">1</td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="section-title">Сапаны жақсарту бойынша ұсыныстар</div>
+        <ul class="recs"><li>Динамикалық плейсхолдерлерден кейінгі ({name}-ға, {name}-ден) тұрақты жалғауларды алып тастап, сөйлемді көмекші сөз арқылы қайта құрастырыңыз немесе код деңгейінде KazakhSuffixHelper қолданыңыз.</li><li>Flutter gen-l10n компиляциясы құламауы үшін барлық {name}, {count} плейсхолдерлері мен ICU plural &#x27;other{...}&#x27; тармақтарын түзетіңіз.</li><li>Ойын глоссарийіндегі бекітілген терминдерді (Grand Coins, отбасы, фракция, варн, мут, фура, ГК) бірізді қолданыңыз.</li><li>Қазақтың төл әріптерін (ә, ғ, қ, ң, ө, ұ, ү, һ, і) орыс немесе латын ұқсас таңбаларымен шатастырмай тексеріп шығыңыз.</li><li>Мобильді интерфейстегі батырмаларда «үшін басыңыз» сияқты артық сөздерді қысқартып, тұйық етістік формасын («Жалға алу», «Сатып алу») қолданыңыз.</li><li>Финалдық ARB экспорты алдында қалған 22 жолды қазақтілді локализация маманының тексеруінен (Human Review) өткізіңіз.</li></ul>
+      </div>
+    </div>
+
+    <div class="card" style="overflow-x:auto;">
+      <div class="section-title">Барлық анықталған мәселелер тізімі (16)</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Severity</th>
+            <th>Қате түрі</th>
+            <th>Source (RU)</th>
+            <th>Target</th>
+            <th>Suggestion</th>
+            <th>Evidence</th>
+            <th>Conf.</th>
+            <th>Human Review</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">garage_rent_button</td>
+              <td><span style="color:#f43f5e;font-weight:700;text-transform:uppercase;font-size:11px;">high</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">length_overflow</td>
+              <td>Арендовать</td>
+              <td style="color:#fda4af;">Жалға алу үшін басыңыз</td>
+              <td style="color:#6ee7b7;">Жалға алу</td>
+              <td style="font-size:12px;color:#94a3b8;">Түпнұсқамен салыстырғанда интерфейс мәтіні тым ұзын (10 → 22 таңба, 2.2x).</td>
+              <td style="text-align:center;">95%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">gift_sent_notification</td>
+              <td><span style="color:#f43f5e;font-weight:700;text-transform:uppercase;font-size:11px;">high</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">suffix_harmony</td>
+              <td>Подарок отправлен игроку {name}</td>
+              <td style="color:#fda4af;">{name}-ға сыйлық жіберілді</td>
+              <td style="color:#6ee7b7;">Сыйлық {name} атты ойыншыға жіберілді</td>
+              <td style="font-size:12px;color:#94a3b8;">«{name}-ға» тіркесіндегі {name} мәні тек ойын жұмыс істеп тұрғанда (runtime) белгілі болады. Тұрақты «-ға» жалғауы ойыншы атының соңғы дыбысы мен жуан-жіңішкелігіне сәйкес келмей қалады (мысалы: «Әлішер-ға» немесе «Серік-ға» — қате). Шешім: (1) сөйлемді жалғаусыз/көмекші сөз арқылы қайта құрастырыңыз немесе (2) қосымшаны код деңгейінде (KazakhSuffixHelper) динамикалық түрде жалғаңыз. Қауіпті автоматты түзету қолданылмайды — маманның тексеруі қажет.</td>
+              <td style="text-align:center;">97%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">donate_balance_label</td>
+              <td><span style="color:#f43f5e;font-weight:700;text-transform:uppercase;font-size:11px;">high</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">glossary_violation</td>
+              <td>На вашем счету {amount} Grand Coins</td>
+              <td style="color:#fda4af;">Шотыңызда {amount} Үлкен монеталар бар</td>
+              <td style="color:#6ee7b7;">Шотыңызда {amount} Grand Coins бар</td>
+              <td style="font-size:12px;color:#94a3b8;">Глоссарий талабы бұзылған: «Grand Coins» термині «Grand Coins» ретінде қолданылуы тиіс.</td>
+              <td style="text-align:center;">94%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">donate_balance_label</td>
+              <td><span style="color:#f43f5e;font-weight:700;text-transform:uppercase;font-size:11px;">high</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">length_overflow</td>
+              <td>На вашем счету {amount} Grand Coins</td>
+              <td style="color:#fda4af;">Шотыңызда {amount} Үлкен монеталар бар</td>
+              <td style="color:#6ee7b7;"></td>
+              <td style="font-size:12px;color:#94a3b8;">Түпнұсқамен салыстырғанда интерфейс мәтіні тым ұзын (28 → 31 таңба, 1.1x).</td>
+              <td style="text-align:center;">95%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">donate_balance_label</td>
+              <td><span style="color:#f59e0b;font-weight:700;text-transform:uppercase;font-size:11px;">medium</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">machine_translation_suspect</td>
+              <td>На вашем счету {amount} Grand Coins</td>
+              <td style="color:#fda4af;">Шотыңызда {amount} Үлкен монеталар бар</td>
+              <td style="color:#6ee7b7;">Шотыңызда {amount} Grand Coins бар</td>
+              <td style="font-size:12px;color:#94a3b8;">«Grand Coins» бренд атауы сөзбе-сөз машиналық түрде «Үлкен монеталар» деп аударылған.</td>
+              <td style="text-align:center;">89%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">family_vault_deposit</td>
+              <td><span style="color:#f59e0b;font-weight:700;text-transform:uppercase;font-size:11px;">medium</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">glossary_violation</td>
+              <td>В склад семьи внесено {sum} ₸</td>
+              <td style="color:#fda4af;">Жанұя қоймасына {sum} ₸ салынды</td>
+              <td style="color:#6ee7b7;">отбасы қоймасына {sum} ₸ салынды</td>
+              <td style="font-size:12px;color:#94a3b8;">Глоссарий талабы бұзылған: «семья» термині «отбасы» ретінде қолданылуы тиіс.</td>
+              <td style="text-align:center;">94%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">fraction_invite_msg</td>
+              <td><span style="color:#f43f5e;font-weight:700;text-transform:uppercase;font-size:11px;">high</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">placeholder_mismatch</td>
+              <td>Вы приняты во фракцию {fractionName}</td>
+              <td style="color:#fda4af;">Сіз {fraction_title} фракциясына қабылдандыңыз</td>
+              <td style="color:#6ee7b7;">Сіз {fractionName} фракциясына қабылдандыңыз</td>
+              <td style="font-size:12px;color:#94a3b8;">Плейсхолдерлер түпнұсқамен сәйкес келмейді (жетіспейді: {fractionName}; артық/өзгертілген: {fraction_title}).</td>
+              <td style="text-align:center;">99%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">online_players_count</td>
+              <td><span style="color:#f43f5e;font-weight:700;text-transform:uppercase;font-size:11px;">high</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">plural_mismatch</td>
+              <td>{count, plural, =0{Нет игроков в сети} one{{count} игрок в сети} few{{count} игрока в сети} many{{count} игроков в сети} other{{count} игроков в сети}}</td>
+              <td style="color:#fda4af;">{count, plural, one{{count} ойыншы желіде}}</td>
+              <td style="color:#6ee7b7;">{count, plural, one{{count, plural, one{{count} ойыншы желіде}}} other{{count, plural, one{{count} ойыншы желіде}}}}</td>
+              <td style="font-size:12px;color:#94a3b8;">ICU көпше/таңдау құрылымы бұзылған: ICU plural құрылымында міндетті &#x27;other{...}&#x27; тармағы жоқ (count).</td>
+              <td style="text-align:center;">97%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">business_tax_warning</td>
+              <td><span style="color:#f43f5e;font-weight:700;text-transform:uppercase;font-size:11px;">high</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">other_localization_issue</td>
+              <td>&lt;color=#FF4D4F&gt;Внимание!&lt;/color&gt; Оплатите налог на бизнес.</td>
+              <td style="color:#fda4af;">Назар аударыңыз! Бизнес салығын төлеңіз.</td>
+              <td style="color:#6ee7b7;"></td>
+              <td style="font-size:12px;color:#94a3b8;">Пішімдеу/HTML тегтері сәйкес келмейді: түпнұсқада [&#x27;&lt;color=#FF4D4F&gt;&#x27;, &#x27;&lt;/color&gt;&#x27;], аудармада жоқ.</td>
+              <td style="text-align:center;">96%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">player_list_header</td>
+              <td><span style="color:#f43f5e;font-weight:700;text-transform:uppercase;font-size:11px;">high</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">orthography</td>
+              <td>Список игроков и пароль</td>
+              <td style="color:#fda4af;">Ойыншылар тизими жане купия сөз</td>
+              <td style="color:#6ee7b7;">Ойыншылар тізімі және құпия сөз</td>
+              <td style="font-size:12px;color:#94a3b8;">Қазақтың төл әріптерінің (ә, ғ, қ, ң, ө, ұ, ү, һ, і) орнына орыс әріптері қолданылған: «жане» → «және», «тизими» → «тізімі», «купия» → «құпия».</td>
+              <td style="text-align:center;">95%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">quest_reward_level</td>
+              <td><span style="color:#f59e0b;font-weight:700;text-transform:uppercase;font-size:11px;">medium</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">suffix_harmony</td>
+              <td>Награда доступна с 5 уровня</td>
+              <td style="color:#fda4af;">Сыйлық 5-ға деңгейден бастап қолжетімді</td>
+              <td style="color:#6ee7b7;">Сыйлық 5-ке деңгейден бастап қолжетімді</td>
+              <td style="font-size:12px;color:#94a3b8;">Сандық жалғау үндестік заңына сәйкес келмейді: «5-ға» емес, қазақ тілінің дыбыс үндестігі бойынша «5-ке» болуы тиіс.</td>
+              <td style="text-align:center;">95%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">dialog_cancel_secondary</td>
+              <td><span style="color:#f59e0b;font-weight:700;text-transform:uppercase;font-size:11px;">medium</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">inconsistent_term</td>
+              <td>Отмена</td>
+              <td style="color:#fda4af;">Болдырмау</td>
+              <td style="color:#6ee7b7;">Бас тарту</td>
+              <td style="font-size:12px;color:#94a3b8;">Бірдей түпнұсқа мәтін («Отмена») файл ішінде әртүрлі аударылған: «Бас тарту» / «Болдырмау».</td>
+              <td style="text-align:center;">91%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">confirm_action_prompt</td>
+              <td><span style="color:#f59e0b;font-weight:700;text-transform:uppercase;font-size:11px;">medium</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">machine_translation_suspect</td>
+              <td>Вы уверены, что хотите продать транспорт?</td>
+              <td style="color:#fda4af;">Сіз сенімдісіз бе не көлікті сатқыңыз келеді?</td>
+              <td style="color:#6ee7b7;">Сіз шынымен растайсыз ба? көлікті сатқыңыз келеді?</td>
+              <td style="font-size:12px;color:#94a3b8;">«Вы уверены что...» құрылымының сапасыз машиналық калькасы.</td>
+              <td style="text-align:center;">89%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">server_connection_lost</td>
+              <td><span style="color:#f43f5e;font-weight:700;text-transform:uppercase;font-size:11px;">high</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">untranslated</td>
+              <td>Соединение с сервером потеряно. Попробуйте снова.</td>
+              <td style="color:#fda4af;"></td>
+              <td style="color:#6ee7b7;"></td>
+              <td style="font-size:12px;color:#94a3b8;">Аударма жолы бос немесе мақсатты ARB файлында бұл кілт мүлде жоқ.</td>
+              <td style="text-align:center;">99%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">bank_insufficient_funds</td>
+              <td><span style="color:#f43f5e;font-weight:700;text-transform:uppercase;font-size:11px;">high</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">wrong_language</td>
+              <td>Недостаточно средств на банковском счёте</td>
+              <td style="color:#fda4af;">Insufficient funds on your bank account</td>
+              <td style="color:#6ee7b7;"></td>
+              <td style="font-size:12px;color:#94a3b8;">Қазақша аударма орнына ағылшынша мәтін жазылған (Insufficient, funds).</td>
+              <td style="text-align:center;">96%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+            <tr>
+              <td style="font-family:monospace;color:#e2e8f0;font-size:12px;">trade_offer_from</td>
+              <td><span style="color:#f43f5e;font-weight:700;text-transform:uppercase;font-size:11px;">high</span></td>
+              <td style="font-size:12px;color:#cbd5e1;">same_as_source</td>
+              <td>Предложение обмена от {player}</td>
+              <td style="color:#fda4af;">Предложение обмена от {player}</td>
+              <td style="color:#6ee7b7;"></td>
+              <td style="font-size:12px;color:#94a3b8;">Аударма мәтіні орысша түпнұсқамен бірдей күйінде қалған.</td>
+              <td style="text-align:center;">98%</td>
+              <td><span style="color:#94a3b8;">Күтілуде (Жоқ)</span></td>
+            </tr>
+            
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
